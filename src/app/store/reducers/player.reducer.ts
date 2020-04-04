@@ -12,6 +12,7 @@ export enum CurrentActions {
   Other
 }
 
+// 初始状态
 export interface PlayState {
   // 播放状态
   playing: boolean;
@@ -32,7 +33,7 @@ export interface PlayState {
   currentAction: CurrentActions;
 }
 
-
+// 初始化的值
 export const initialState: PlayState = {
   playing: false,
   songList: [],
@@ -44,6 +45,8 @@ export const initialState: PlayState = {
 
 const reducer = createReducer(
   initialState,
+  // on方法用于注册一系列事件的；注册 action
+  // 修改state 返回新的state
   on(SetPlaying, (state, { playing }) => ({ ...state, playing })),
   on(SetPlayList, (state, { playList }) => ({ ...state,  playList })),
   on(SetSongList, (state, { songList }) => ({ ...state,  songList })),
@@ -52,6 +55,7 @@ const reducer = createReducer(
   on(SetCurrentAction, (state, { currentAction }) => ({ ...state,  currentAction }))
 );
 
+// 
 export function playerReducer(state: PlayState, action: Action) {
   return reducer(state, action);
 }
