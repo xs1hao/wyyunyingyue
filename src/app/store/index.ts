@@ -10,6 +10,8 @@ import { memberReducer } from './reducers/member.reducer';
 @NgModule({
   declarations: [],
   imports: [
+    // 注册reducer 
+    // forRoot()
     StoreModule.forRoot({ player: playerReducer, member: memberReducer }, {
       runtimeChecks: {
         strictStateImmutability: true,
@@ -18,9 +20,9 @@ import { memberReducer } from './reducers/member.reducer';
         strictActionSerializability: true,
       }
     }),
-    StoreDevtoolsModule.instrument({
-      maxAge: 20,
-      logOnly: environment.production
+    StoreDevtoolsModule.instrument({// 调试配置，这个需要浏览器安装插件配合使用；
+      maxAge: 20,// 最多纪录20条数据
+      logOnly: environment.production // 打印log
     })
   ]
 })

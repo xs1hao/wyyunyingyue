@@ -107,6 +107,7 @@ export class WyPlayerComponent implements OnInit {
     private batchActionsServe: BatchActionsService,
     private router: Router
   ) {
+    // 监听
     const appStore$ = this.store$.pipe(select(getPlayer));
     appStore$.pipe(select(getSongList)).subscribe(list => this.watchList(list, 'songList'));
     appStore$.pipe(select(getPlayList)).subscribe(list => this.watchList(list, 'playList'));

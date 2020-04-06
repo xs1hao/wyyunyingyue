@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
   singers: Singer[];
   user: User;
 
-  // 拿到轮播组件的实例，以便调用他的方法 onChangeSlide()
+  // 拿到轮播组件的实例，以便调用他的方法 onChangeSlide();
   @ViewChild(NzCarouselComponent, { static: true }) private nzCarousel: NzCarouselComponent;
 
   constructor(
