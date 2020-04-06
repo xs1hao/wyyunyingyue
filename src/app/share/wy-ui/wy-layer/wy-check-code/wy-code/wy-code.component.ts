@@ -28,6 +28,7 @@ export class WyCodeComponent implements OnInit, ControlValueAccessor, AfterViewI
   currentFocusIndex = 0;
 
   private destory$ = new Subject();
+  // @ViewChild和@ViewChildren会在父组件钩子方法ngAfterViewInit调用之前赋值
   @ViewChild('codeWrap', { static: true }) private codeWrap: ElementRef;
   constructor(private cdr: ChangeDetectorRef) {
     this.inputArr = Array(CODELEN).fill('');

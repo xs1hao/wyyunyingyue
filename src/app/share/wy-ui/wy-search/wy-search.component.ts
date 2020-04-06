@@ -33,6 +33,7 @@ export class WySearchComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   ngAfterViewInit() {
+    // fromEvent 将事件转化成observable序列
     fromEvent(this.nzInput.nativeElement, 'input')
     .pipe(debounceTime(300), distinctUntilChanged(), pluck('target', 'value'))
     .subscribe((value: string) => {

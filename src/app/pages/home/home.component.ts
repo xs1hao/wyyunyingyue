@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     private memberServe: MemberService,
   ) {
     // 通过路由守卫获取的数据
-    console.log('route.data:',this.route.data); 
+    // console.log('route.data:',this.route.data); 
     this.route.data.pipe(map(res => res.homeDatas)).subscribe(([banners, hotTags, songSheetList, singers]) => {
       this.banners = banners;
       this.hotTags = hotTags;

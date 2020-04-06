@@ -8,8 +8,10 @@ import { SongSheet } from '../../../services/data-types/common.types';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SingleSheetComponent implements OnInit {
+
   @Input() sheet: SongSheet;
   @Output() onPlay = new EventEmitter<number>();
+  
   constructor() { }
 
   ngOnInit() {
